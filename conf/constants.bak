@@ -1,0 +1,250 @@
+<Universe>
+    <Constant>
+    	<Name>RatioRadiusMS</Name>
+        <Value>0.8</Value>
+        <Desc>Main sequence stars Radius is related to their mass through R=M^0.8</Desc>
+    </Constant>
+    <Constant>
+    	<Name>RatioRadiusPMS</Name>
+        <Value>0.95</Value>
+        <Desc>Pre Main sequence stars Radius is bigger than in MS</Desc>
+    </Constant>
+    <Constant>
+		<Name>MinDelta</Name>
+        <Value>1</Value>
+        <Desc>Minimum star cluster separation</Desc>
+    </Constant>
+    <Constant>
+		<Name>MaxDelta</Name>
+        <Value>8</Value>
+        <Desc>Maximum star cluster separation</Desc>
+    </Constant>
+    <Constant>
+		<Name>SunMass</Name>
+        <Value>1.989E30</Value>
+        <Desc>Sun mass in kg</Desc>
+    </Constant>
+    <Constant>
+		<Name>SunRadius</Name>
+        <Value>695800</Value>
+        <Desc>Sun radius in km</Desc>
+    </Constant>
+    <Constant>
+		<Name>SunLuminosity</Name>
+        <Value>3.846E26</Value>
+        <Desc>Sun luminosity in W</Desc>
+    </Constant>
+    <Constant>
+		<Name>Stefan-Boltzmann</Name>
+        <Value>5.67E-8</Value>
+        <Desc>Stephan-Boltzmann constant [W*m^(-2)*K^(-4)]</Desc>
+    </Constant>
+    <Constant>
+		<Name>NameMaxIndex</Name>
+        <Value>1E8</Value>
+        <Desc>Maximum index to calculate star names</Desc>
+    </Constant>
+    <Probability Name="IsStarSequence">
+        <Value>0.9</Value>
+        <Desc>Probability of star belonging to the Main Sequence</Desc>
+    </Probability>
+    <Probability Name="StarIndependence">
+        <Value>0.25</Value>
+        <Desc>Percentage of stars not belonging to a cluster in the sector</Desc>
+    </Probability>
+    <StarDensity>
+        <!--    Val is stars/cubiclightyear
+                Factor is the correction factor to keep uniform the number of stars in the sector
+        -->
+        <Val>0.0003</Val>
+        <Factor>0.15</Factor>
+        <Id>Very Low</Id>
+    </StarDensity>
+    <StarDensity>
+        <Val>0.003</Val>
+        <Factor>0.15</Factor>
+        <Id>Low</Id>
+    </StarDensity>
+    <StarDensity>
+        <Val>0.03</Val>
+        <Factor>0.1</Factor>
+        <Id>Normal</Id>
+    </StarDensity>
+    <StarDensity>
+        <Val>3</Val>
+        <Factor>0.025</Factor>
+        <Id>High</Id>
+    </StarDensity>
+    <StarDensity>
+        <Val>3000</Val>
+        <Factor>0.003</Factor>
+        <Id>Very High</Id>
+    </StarDensity>
+    <!-- http://www.uni.edu/morgans/astro/course/Notes/section2/spectralmasses.html -->
+    <!-- http://en.wikipedia.org/wiki/Stellar_classification -->
+    <StarSequence>
+        <Class>O</Class>
+        <!-- MinMass is open limit so 20 means 19.999999 -->
+        <MinMass>20</MinMass>
+        <MaxMass>40</MaxMass>
+        <MinTemp>30000</MinTemp>
+        <MaxTemp>50000</MaxTemp>
+        <Desc>Spectral type O</Desc>
+        <Freq>0.001</Freq>
+        <Seq>MS</Seq>
+    </StarSequence>
+    <StarSequence>
+        <Class>B</Class>
+        <MinMass>2.9</MinMass>
+        <MaxMass>20</MaxMass>
+        <MinTemp>10000</MinTemp>
+        <MaxTemp>30000</MaxTemp>
+        <Desc>Spectral type B</Desc>
+        <Freq>0.199</Freq>
+        <MinR>0</MinR>
+        <MaxR>0</MaxR>
+        <Seq>MS</Seq>
+    </StarSequence>
+    <StarSequence>
+        <Class>A</Class>
+        <MinMass>1.86</MinMass>
+        <MaxMass>2.9</MaxMass>
+        <MinTemp>8000</MinTemp>
+        <MaxTemp>30000</MaxTemp>
+        <Desc>Spectral type A</Desc>
+        <Freq>0.7</Freq>
+        <MinR>0</MinR>
+        <MaxR>0</MaxR>
+        <Seq>MS</Seq>
+    </StarSequence>
+    <StarSequence>
+        <Class>F</Class>
+        <MinMass>1.10</MinMass>
+        <MaxMass>1.86</MaxMass>
+        <MinTemp>6000</MinTemp>
+        <MaxTemp>8000</MaxTemp>
+        <Desc>Spectral type F</Desc>
+        <Freq>3</Freq>
+        <MinR>0</MinR>
+        <MaxR>0</MaxR>
+        <Seq>MS</Seq>
+    </StarSequence>
+    <StarSequence>
+        <Class>G</Class>
+        <MinMass>0.82</MinMass>
+        <MaxMass>1.10</MaxMass>
+        <MinTemp>5000</MinTemp>
+        <MaxTemp>6000</MaxTemp>
+        <Desc>Spectral type G</Desc>
+        <Freq>7.5</Freq>
+        <MinR>0</MinR>
+        <MaxR>0</MaxR>
+        <Seq>MS</Seq>
+    </StarSequence>
+     <StarSequence>
+        <Class>K</Class>
+        <MinMass>0.53</MinMass>
+        <MaxMass>0.82</MaxMass>
+        <MinTemp>4000</MinTemp>
+        <Desc>Spectral type K</Desc>
+        <MaxTemp>5000</MaxTemp>
+        <Freq>12.1</Freq>
+        <MinR>0</MinR>
+        <MaxR>0</MaxR>
+        <Seq>MS</Seq>
+    </StarSequence>
+    <StarSequence>
+        <Class>M</Class>
+        <MinMass>0.1</MinMass>
+        <MaxMass>0.53</MaxMass>
+        <MinTemp>2500</MinTemp>
+        <MaxTemp>4000</MaxTemp>
+        <Desc>Spectral type M</Desc>
+        <Freq>76.5</Freq>
+        <MinR>0</MinR>
+        <MaxR>0</MaxR>
+        <Seq>MS</Seq>
+    </StarSequence>
+    <StarSequence>
+        <Class>P</Class>
+        <MinMass>0.1</MinMass>
+        <MaxMass>8</MaxMass>
+        <MinTemp>500</MinTemp>
+        <MaxTemp>5000</MaxTemp>
+        <Desc>Protostar</Desc>
+        <Freq>20</Freq>
+        <MinR>0</MinR>
+        <MaxR>0</MaxR>
+        <Seq>NMS</Seq>
+    </StarSequence>
+    <StarSequence>
+        <Class>WD</Class>
+        <MinMass>0.1</MinMass>
+        <MaxMass>0.25</MaxMass>
+        <Freq>5</Freq>
+        <MinR>0.008</MinR>
+        <MaxR>0.02</MaxR>
+        <MinTemp>4000</MinTemp>
+        <MaxTemp>150000</MaxTemp>
+        <Desc>White Dwarf</Desc>
+        <MinR>0</MinR>
+        <MaxR>0</MaxR>
+        <Seq>NMS</Seq>
+    </StarSequence>
+    <StarSequence>
+        <Class>RG</Class>
+        <MinMass>0.25</MinMass>
+        <MaxMass>8</MaxMass>
+        <Freq>65</Freq>
+        <MinR>20</MinR>
+        <MaxR>100</MaxR>
+        <MinTemp>3000</MinTemp>
+        <MaxTemp>5000</MaxTemp>
+        <Desc>Red Giant</Desc>
+        <MinR>0</MinR>
+        <MaxR>0</MaxR>
+        <Seq>NMS</Seq>
+    </StarSequence>
+    <StarSequence>
+        <Class>RSG</Class>
+        <MinMass>8</MinMass>
+        <MaxMass>80</MaxMass>
+        <Freq>8</Freq>
+        <MinR>200</MinR>
+        <MaxR>1000</MaxR>
+        <MinTemp>3000</MinTemp>
+        <MaxTemp>5000</MaxTemp>
+        <Desc>Red Super Giant</Desc>
+        <MinR>0</MinR>
+        <MaxR>0</MaxR>
+        <Seq>NMS</Seq>
+    </StarSequence>
+    <StarSequence>
+        <Class>BSG</Class>
+        <MinMass>10</MinMass>
+        <MaxMass>100</MaxMass>
+        <Freq>1</Freq>
+        <MinR>10</MinR>
+        <MaxR>100</MaxR>
+        <MinTemp>10000</MinTemp>
+        <MaxTemp>50000</MaxTemp>
+        <Desc>Blue Super Giant</Desc>
+        <MinR>0</MinR>
+        <MaxR>0</MaxR>
+        <Seq>NMS</Seq>
+    </StarSequence>
+    <StarSequence>
+        <Class>WR</Class>
+        <MinMass>20</MinMass>
+        <MaxMass>50</MaxMass>
+        <Freq>1</Freq>
+        <MinR>0.5</MinR>
+        <MaxR>0.30</MaxR>
+        <MinTemp>30000</MinTemp>
+        <MaxTemp>200000</MaxTemp>
+        <Desc>Wolf-Rayet</Desc>
+        <MinR>0</MinR>
+        <MaxR>0</MaxR>
+        <Seq>NMS</Seq>
+    </StarSequence>
+</Universe>
